@@ -1,4 +1,4 @@
-# Python Console Beginners Premium Puzzle 5
+# Python Console Beginners Puzzle 5
 
 ## Switches
 
