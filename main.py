@@ -54,6 +54,31 @@ def puzzle_a():
     print('\nPuzzle A')
     print('~~~~~~~~~')
 
+    user_input = input("What day is it?: ")
+
+    if user_input != "" and user_input is not None:
+        match user_input.lower():
+            case "monday":
+                print(f"{Fore.RED} Monday: 20 Sit ups {Style.RESET_ALL}")
+            case "tuesday":
+                print(f"{Fore.BLUE} Tuesday: 15 jumping jacks {Style.RESET_ALL}")
+            case "wednesday":
+                print(f"{Fore.GREEN} Wednesday: 20 press ups {Style.RESET_ALL}")
+            case "thursday":
+                print(f"{Fore.YELLOW} Thursday: 10 burpees {Style.RESET_ALL}")
+            case "friday":
+                print(f"{Fore.CYAN} Friday: 15min jog{Style.RESET_ALL}")
+            case "saturday":
+                print(f"{Fore.MAGENTA} Saturday: 20 barbell curls {Style.RESET_ALL}")
+            case "sunday":
+                print(f"{Fore.LIGHTRED_EX} Sunday: 15 min jog {Style.RESET_ALL}")
+            case _:
+                # Default runs only if they don't enter a day of the week
+                print("20 bear crawls")
+
+    else:
+        print("Error. You can't just enter blank space")
+
 
 def example_b():
     print('\nExample B')
@@ -84,7 +109,6 @@ def example_b():
         print("Sorry, I did not understand...")
 
 
-
 # Puzzle B - Color me in
 # Re-write the above example program to use a SWITCH statement
 # Use the unicode colors Cyan, Yellow and Magenta instead of red, blue and green.
@@ -93,6 +117,23 @@ def example_b():
 def puzzle_b():
     print('\nPuzzle B')
     print('~~~~~~~~~')
+
+    cyan = '\033[36m'
+    yellow = '\033[33m'
+    magenta = '\033[35m'
+    reset = '\033[0m'
+
+    user_input = input("Choose a color: Cyan, Yellow or Magenta: ")
+
+    match user_input.lower():
+        case "cyan" | "c":
+            print(f"{cyan} You chose Cyan... {reset} thanks!")
+        case "yellow" | "y":
+            print(f"{yellow} You chose Yellow... {reset} thanks!")
+        case "magenta" | "m":
+            print(f"{magenta} You chose Magenta... {reset} thanks!")
+        case _:
+            print("Sorry, no matching color...")
 
 
 def example_c():
@@ -121,6 +162,33 @@ def example_c():
 def puzzle_c():
     print('\nPuzzle C')
     print('~~~~~~~~~~~')
+
+    num1 = int(input("Enter a number :"))
+
+    operator_input = input("Enter \"+\" or \"-\" or \"*\" or \"/\":")
+
+    num2 = int(input("Enter a second number :"))
+
+    match operator_input:
+        case "+":
+            add_ans = num1 + num2
+            print(f"{num1} + {num2} = {add_ans}")
+        case "-":
+            minus_ans = num1 - num2
+            print(f"{num1} - {num2} = {minus_ans}")
+        case "*":
+            multiply_ans = num1 * num2
+            print(f"{num1} * {num2} = {multiply_ans}")
+        case "/":
+            divide_ans = num1 / num2
+            print(f"{num1} / {num2} = {divide_ans}")
+
+            # You could also show remainder.
+            divide_quotient = num1 // num2
+            remainder = num1 % num2
+            print(f"{num1} / {num2} = {divide_quotient} remainder {remainder}")
+        case _:
+            print("Error, enter only + or - or * or / ")
 
 
 if __name__ == '__main__':
